@@ -1,0 +1,14 @@
+@import 'base/variables';
+@import 'base/bootstrap';
+@import 'base/utils';
+
+@import 'commons/header';
+@import 'commons/loader';
+@import 'commons/table';
+
+.browsehappy {
+  background: #ccc;
+  color: #000;
+  margin: 0.2em 0;
+  padding: 0.2em 0;
+}

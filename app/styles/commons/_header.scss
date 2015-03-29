@@ -1,0 +1,14 @@
+.main-header {
+  background-color: $brand-primary;
+  background-image: url('../media/onion.png');
+  background-position: 15px -30px;
+  background-repeat: no-repeat;
+  background-size: 128px;
+  color: $brand-madura;
+  margin-bottom: $grid-gutter-width;
+
+  h1 {
+    font-size: 5rem;
+    margin: $grid-gutter-width 0;
+  }
+}

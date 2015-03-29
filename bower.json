@@ -1,0 +1,8 @@
+{
+  "name": "amadurou",
+  "dependencies": {
+    "bootstrap-sass": "^3",
+    "modernizr": "^2.8",
+    "footable": "~2.0.3"
+  }
+}
