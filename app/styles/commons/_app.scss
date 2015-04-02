@@ -1,0 +1,17 @@
+.app {
+  background-color: $brand-primary;
+  background-image: url('#{$media-path}onion.svg');
+  background-position: 0 -60px;
+  background-repeat: no-repeat;
+  background-size: 180px;
+  min-height: 100vh;
+
+  @include sm {
+    background-position: 15px 30px;
+    background-size: 256px;
+  }
+
+  &__content {
+    min-height: calc(100% - #{$header-height});
+  }
+}

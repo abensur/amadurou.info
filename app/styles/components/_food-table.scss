@@ -1,0 +1,21 @@
+.food {
+  &__table {
+    > .row {
+      color: darken($brand-primary, 15%);
+    }
+
+    .strong {
+      background-color: $strong;
+      color: lighten($strong, 55%);
+    }
+
+    .regular {
+      background-color: lighten($strong, 55%);
+      color: $strong;
+    }
+
+    .week {
+      color: #ccc;
+    }
+  }
+}

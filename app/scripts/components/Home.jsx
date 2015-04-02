@@ -69,69 +69,22 @@ var Home = React.createClass({
 			meses;
 
 		if (this.state.ready) {
-			rows = food.map(function (d, i) {
-				return (<tr key={'food-' + i}>
-					<td>{d.nome}</td>
-					<td>{d.tipo}</td>
-					{
-						config.meses.map(function (mes) {
-							return (
-								<td className={(d[mes[1]] === 'Regular' ? 'bg-warning text-warning' : (d[mes[1]] === 'Forte' ? 'bg-success text-success' : 'text-muted'))}>{d[mes[1]]}</td>);
-						})
-					}
-
-				</tr>);
-			});
 
 			meses = config.meses.map(function (mes) {
 				return (<th data-toggle="true" data-hide="phone,tablet">{mes[0]}</th>);
 			});
 
-			html = <div className="food__table">
-				<Bootstrap.Row>
-					<Bootstrap.Col xs={12} sm={12} md={12}>
-						<div className="footable__filter">
-							<form className="form-horizontal" onSubmit={this._filterResults}>
-								<Bootstrap.Input className="filter-tipo" type="select" label="Tipo"
-												 onChange={this._onChangeFilter} labelClassName="col-xs-3"
-												 wrapperClassName="col-xs-9">
-									<option key="0" value=""></option>
-									{this.state.types.map(function (type) {
-										return <option key={type} value={type}>{type}</option>;
-									})}
-								</Bootstrap.Input>
-								<Bootstrap.Input id="filter" type="text" label="Procura" labelClassName="col-xs-3"
-												 wrapperClassName="col-xs-9"/>
-							</form>
-						</div>
-					</Bootstrap.Col>
-				</Bootstrap.Row>
-				<table className="footable table" ref="foodTable" data-page-size="20" data-filter="#filter">
-					<thead>
-					<tr>
-						<th data-toggle="true">Nome</th>
-						<th data-toggle="true">Tipo</th>
-						{meses}
-					</tr>
-					</thead>
-					<tbody>
-					{rows}
-					</tbody>
-					<tfoot className="hide-if-no-paging">
-					<tr>
-						<td colSpan={14}>
-							<div className="pagination pagination-centered"></div>
-						</td>
-					</tr>
-					</tfoot>
-				</table>
-			</div>;
+			html = (
+				<div className="natural-form">
+					Eu quero comer <span className="term type">alimento</span> que estejam na <span className="term type">epoca</span>
+				</div>
+			);
 		}
 		else {
 			html = <Loader/>;
 		}
 		return (
-			<div key="Home">
+			<div key="Home" className="home">
 				<div className="container">{html}</div>
 			</div>
 		);

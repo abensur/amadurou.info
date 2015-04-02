@@ -1,4 +1,4 @@
-var React = require('react'),
+var React  = require('react'),
 	Router = require('react-router'),
 	Header = require('./commons/Header'); // or var Router = ReactRouter; in browsers
 
@@ -10,11 +10,11 @@ var RouteHandler = Router.RouteHandler;
 var App = React.createClass({
 	render: function () {
 		return (
-			<div>
+			<div className="app">
 				<Header/>
-
-				{/* this is the important part */}
-				<RouteHandler/>
+				<main className="app__content">
+					<RouteHandler/>
+				</main>
 			</div>
 		);
 	}

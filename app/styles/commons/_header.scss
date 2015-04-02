@@ -1,14 +1,12 @@
-.main-header {
-  background-color: $brand-primary;
-  background-image: url('../media/onion.png');
-  background-position: 15px -30px;
-  background-repeat: no-repeat;
-  background-size: 128px;
+.app__header {
   color: $brand-madura;
+  height: $header-height;
   margin-bottom: $grid-gutter-width;
+  text-align: center;
 
   h1 {
-    font-size: 5rem;
+    font-size: 7rem;
+    font-weight: 100;
     margin: $grid-gutter-width 0;
   }
 }

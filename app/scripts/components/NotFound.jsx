@@ -4,13 +4,11 @@ var NotFound = React.createClass({
 
 	render: function () {
 		return (
-			<div>
+			<div key="404" className="not-found">
 				<h1>404</h1>
-
 			</div>
 		);
 	}
-
 });
 
 module.exports = NotFound;

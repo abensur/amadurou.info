@@ -1,14 +1,15 @@
-/*------------------------------------*\
-    #UTILS...........Vars & Mixins
-\*------------------------------------*/
+// #UTILS
 
-@function parseInt($n) {
+@function parse-int($n) {
   @return $n / ($n * 0 + 1);
 }
 
-/*------------------------------------*\
-    #MIXINS
-\*------------------------------------*/
+%vertical-align {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
 @mixin media-query($media-query) {
 
   @if $media-query == xs-only {
@@ -112,7 +113,7 @@
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
   }
   @if $level == 5 {
-    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
+    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
   }
 }
 
@@ -122,15 +123,10 @@
   transform: translateY(-$top);
 }
 
-@mixin radial-gradient($fromColor, $toColor) {
-  background-color: $toColor; /* Fallback Color */
-  background-image: -webkit-gradient(radial, top center, 0px, center center, 100%, color-stop(0%, $fromColor), color-stop(100%, $toColor)); /* Chrome,Safari4+ */
-  background-image: -webkit-radial-gradient(top, ellipse cover, $fromColor 0%, $toColor 100%); /* Chrome10+,Safari5.1+ */
-  background-image: -moz-radial-gradient(top, ellipse cover, $fromColor 0%, $toColor 100%); /* FF3.6+ */
-  background-image: -ms-radial-gradient(top, ellipse cover, $fromColor 0%, $toColor 100%); /* IE10+ */
-  background-image: -o-radial-gradient(top, ellipse cover, $fromColor 0%, $toColor 100%); /* Opera 12+ */
-  background-image: radial-gradient(ellipse at top, $fromColor 0%, $toColor 100%); /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$fromColor', endColorstr='$toColor', GradientType=1); /* IE6-9 fallback on horizontal gradient */
+@mixin radial-gradient($from-color, $to-color) {
+  background-color: $to-color;
+  background-image: radial-gradient(ellipse at top, $from-color 0%, $to-color 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$from-color', endColorstr='$to-color', GradientType=1);
 }
 
 @mixin dashed-border($dashlength,
@@ -167,13 +163,11 @@ $position: left) {
   @if $side == inside {
     @if $location == bottom {
       $rotate: '180 8 4';
-    }
-    @else if $location == left {
+    } @else if $location == left {
       $height: $size;
       $rotate: '270 8 8';
       $width: $size / 2;
-    }
-    @else if $location == right {
+    } @else if $location == right {
       $height: $size;
       $rotate: '90 4 4';
       $width: $size / 2;
@@ -214,8 +208,7 @@ $position: left) {
 
       @if $side == inside {
         top: 0;
-      }
-      @else {
+      } @else {
         top: -#{$height}px;
       }
     }
@@ -226,8 +219,7 @@ $position: left) {
 
       @if $side == inside {
         right: 0;
-      }
-      @else {
+      } @else {
         right: -#{$width}px;
       }
     }
@@ -238,8 +230,7 @@ $position: left) {
 
       @if $side == inside {
         bottom: 0;
-      }
-      @else {
+      } @else {
         bottom: -#{$height}px;
       }
     }
@@ -250,8 +241,7 @@ $position: left) {
 
       @if $side == inside {
         left: 0;
-      }
-      @else {
+      } @else {
         left: -#{$width}px;
       }
     }
@@ -271,12 +261,10 @@ $position: left) {
     @else {
       @if $side == inside {
         background-image: url($arrow);
-      }
-      @else {
+      } @else {
         @if $type == fill {
           background-image: url($arrow);
-        }
-        @else {
+        } @else {
           background-image: url($wave);
         }
       }

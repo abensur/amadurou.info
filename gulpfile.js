@@ -106,6 +106,12 @@ gulp.task('scripts', function (cb) {
 gulp.task('lint', function () {
 	return gulp.src('app/scripts/**/*')
 		.pipe($.eslint({
+			plugins: ['react'],
+			rules: {
+				'react/jsx-no-undef': 0,
+				'react/jsx-uses-react': 1,
+				'react/jsx-uses-vars': 1
+			},
 			useEslintrc: true
 		}))
 		.pipe($.eslint.format())

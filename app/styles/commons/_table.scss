@@ -146,7 +146,7 @@
   }
 
   .footable-row-detail-cell {
-    border-bottom: 1px solid $brand-primary !important;
+    border-bottom: 1px solid $text-color !important;
   }
 
   .footable-row-detail-group {
@@ -211,9 +211,6 @@
 
   tbody {
     > tr {
-      &:hover:not(.footable-row-detail) {
-        background: #eee;
-      }
 
       > td {
         border: 0;
@@ -226,7 +223,7 @@
         }
 
         a.heading {
-          color: $brand-primary;
+          color: $text-color;
           font-size: 18px;
         }
 
@@ -248,7 +245,7 @@
       > td {
         background-color: transparent;
         border: 0;
-        border-top: 2px solid $brand-primary;
+        border-top: 2px solid $text-color;
         color: #fff;
         text-align: center;
       }
@@ -288,7 +285,7 @@
           }
 
           &.active > a {
-            background-color: $brand-primary;
+            background-color: $text-color;
             color: #fff;
           }
 
@@ -352,7 +349,7 @@
     }
 
     .control-label {
-      color: $brand-primary;
+      color: $text-color;
       display: inline-block;
       padding: 7px 12px 0 0;
 
@@ -362,16 +359,16 @@
     }
 
     input.form-control {
-      border-color: $brand-primary;
+      border-color: $text-color;
       box-shadow: none;
       margin-right: ($grid-gutter-width / 2);
     }
 
     select.form-control {
-      border-color: $brand-primary;
+      border-color: $text-color;
 
       &:focus {
-        box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba($brand-primary, 0.6);
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba($text-color, 0.6);
       }
     }
   }
