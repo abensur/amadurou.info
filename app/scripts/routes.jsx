@@ -2,7 +2,7 @@ var React    = require('react/addons'),
 	Router   = require('react-router'),
 	App      = require('./components/App'),
 	Home     = require('./components/Home'),
-	Table    = require('./components/Table'),
+	FoodTable    = require('./components/FoodTable'),
 	NotFound = require('./components/NotFound');
 
 /*var DefaultRoute  = Router.DefaultRoute,
@@ -14,8 +14,8 @@ var { Route, DefaultRoute, RouteHandler, Link, NotFoundRoute } = Router;
 
 var routes = (
 	<Route handler={App}>
-		<Route name="home" handler={Home}/>'
-		<Route name="table" handler={Table}/>
+		<Route name="home" handler={Home}/>
+		<Route name="table" handler={FoodTable}/>
 		<DefaultRoute handler={Home}/>
 		<NotFoundRoute handler={NotFound}/>
 	</Route>

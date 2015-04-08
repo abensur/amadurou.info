@@ -1,5 +1,3 @@
-/* jshint node:true */
-
 var gulp                  = require('gulp'),
 	$                     = require('gulp-load-plugins')(),
 	bowerFiles            = require('main-bower-files')(),
